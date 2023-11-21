@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://knkuyx48026l"]
+
+[ext_resource type="Script" path="res://Scripts/Stone.gd" id="1_feaiv"]
+[ext_resource type="Texture2D" uid="uid://dtoxndpmhmfba" path="res://Arts/Legacy-Fantasy - High Forest 2.0/HUD/Base-01.png" id="2_cftcd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_125uv"]
+size = Vector2(12, 14)
+
+[node name="Stone" type="CharacterBody2D"]
+script = ExtResource("1_feaiv")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+texture = ExtResource("2_cftcd")
+region_enabled = true
+region_rect = Rect2(34, 194, 12, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_125uv")

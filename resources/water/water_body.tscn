@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://h5ugxtdsal0h"]
+
+[ext_resource type="Script" path="res://Scripts/Water_Body.gd" id="1_6vuaj"]
+[ext_resource type="Script" path="res://Scripts/smooth_path_moodfled.gd" id="3_8xat6"]
+[ext_resource type="Shader" path="res://Shader/water_body.gdshader" id="3_ypfb0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m1bck"]
+shader = ExtResource("3_ypfb0")
+shader_parameter/tint = Color(0, 0.705882, 0.988235, 0.333333)
+
+[sub_resource type="Curve2D" id="Curve2D_1c6or"]
+
+[node name="Water_Body" type="Node2D"]
+script = ExtResource("1_6vuaj")
+
+[node name="Water_Polygon" type="Polygon2D" parent="."]
+material = SubResource("ShaderMaterial_m1bck")
+color = Color(0.568627, 0.905882, 1, 0.262745)
+
+[node name="Water_Border" type="Path2D" parent="."]
+self_modulate = Color(0.333333, 0.65098, 1, 0.580392)
+curve = SubResource("Curve2D_1c6or")
+script = ExtResource("3_8xat6")
+width = 4.0
